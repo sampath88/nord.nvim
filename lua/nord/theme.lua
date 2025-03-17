@@ -19,35 +19,35 @@ end
 theme.loadSyntax = function()
 	-- Syntax highlight groups
 	return {
-		Type = { fg = nord.nord9_gui }, -- int, long, char, etc.
-		StorageClass = { fg = nord.nord9_gui }, -- static, register, volatile, etc.
-		Structure = { fg = nord.nord9_gui }, -- struct, union, enum, etc.
-		Constant = { fg = nord.nord4_gui }, -- any constant
-		Character = { fg = nord.nord14_gui }, -- any character constant: 'c', '\n'
-		Number = { fg = nord.nord15_gui }, -- a number constant: 5
-		Boolean = { fg = nord.nord9_gui }, -- a boolean constant: TRUE, false
-		Float = { fg = nord.nord15_gui }, -- a floating point constant: 2.3e10
-		Statement = { fg = nord.nord9_gui }, -- any statement
-		Label = { fg = nord.nord9_gui }, -- case, default, etc.
-		Operator = { fg = nord.nord9_gui }, -- sizeof", "+", "*", etc.
-		Exception = { fg = nord.nord9_gui }, -- try, catch, throw
-		PreProc = { fg = nord.nord9_gui }, -- generic Preprocessor
-		Include = { fg = nord.nord9_gui }, -- preprocessor #include
-		Define = { fg = nord.nord9_gui }, -- preprocessor #define
-		Macro = { fg = nord.nord9_gui }, -- same as Define
-		Typedef = { fg = nord.nord9_gui }, -- A typedef
-		PreCondit = { fg = nord.nord13_gui }, -- preprocessor #if, #else, #endif, etc.
-		Special = { fg = nord.nord4_gui }, -- any special symbol
-		SpecialChar = { fg = nord.nord13_gui }, -- special character in a constant
-		Tag = { fg = nord.nord4_gui }, -- you can use CTRL-] on this
-		Delimiter = { fg = nord.nord6_gui }, -- character that needs attention like , or .
-		SpecialComment = { fg = nord.nord8_gui }, -- special things inside a comment
-		Debug = { fg = nord.nord11_gui }, -- debugging statements
-		Underlined = { fg = nord.nord14_gui, bg = nord.none, style = "underline" }, -- text that stands out, HTML links
+		Type = { fg = nord.tag_fg }, -- int, long, char, etc.
+		StorageClass = { fg = nord.keyword_fg }, -- static, register, volatile, etc.
+		Structure = { fg = nord.keyword_fg }, -- struct, union, enum, etc.
+		Constant = { fg = nord.tag_fg }, -- any constant
+		Character = { fg = nord.string_fg }, -- any character constant: 'c', '\n'
+		Number = { fg = nord.number_fg }, -- a number constant: 5
+		Boolean = { fg = nord.number_fg }, -- a boolean constant: TRUE, false
+		Float = { fg = nord.number_fg }, -- a floating point constant: 2.3e10
+		Statement = { fg = nord.function_fg }, -- any statement
+		Label = { fg = nord.keyword_fg }, -- case, default, etc.
+		Operator = { fg = nord.keyword_fg }, -- sizeof", "+", "*", etc.
+		Exception = { fg = nord.keyword_fg }, -- try, catch, throw
+		PreProc = { fg = nord.keyword_fg }, -- generic Preprocessor
+		Include = { fg = nord.keyword_fg }, -- preprocessor #include
+		Define = { fg = nord.keyword_fg }, -- preprocessor #define
+		Macro = { fg = nord.keyword_fg }, -- same as Define
+		Typedef = { fg = nord.keyword_fg }, -- A typedef
+		PreCondit = { fg = nord.keyword_fg }, -- preprocessor #if, #else, #endif, etc.
+		Special = { fg = nord.keyword_fg }, -- any special symbol
+		SpecialChar = { fg = nord.misc_fg }, -- special character in a constant
+		Tag = { fg = nord.tag_fg }, -- you can use CTRL-] on this
+		Delimiter = { fg = nord.keyword_fg }, -- character that needs attention like , or .
+		SpecialComment = { fg = nord.misc_fg }, -- special things inside a comment
+		Debug = { fg = nord.annotation_fg }, -- debugging statements
+		Underlined = { fg = nord.misc_fg, bg = nord.none, style = "underline" }, -- text that stands out, HTML links
 		Ignore = { fg = nord.nord1_gui }, -- left blank, hidden
-		Todo = { fg = nord.nord13_gui, bg = nord.none, style = bold_italic }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+		Todo = { fg = nord.annotation_fg, bg = nord.none, style = bold_italic }, -- anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 		Conceal = { fg = nord.none, bg = nord.nord0_gui },
-		htmlLink = { fg = nord.nord14_gui, style = "underline" },
+		htmlLink = { fg = nord.misc_fg, style = "underline" },
 		markdownH1Delimiter = { fg = nord.nord8_gui },
 		markdownH2Delimiter = { fg = nord.nord11_gui },
 		markdownH3Delimiter = { fg = nord.nord14_gui },
@@ -59,14 +59,14 @@ theme.loadSyntax = function()
 		markdownH1 = { fg = nord.nord8_gui, style = bold },
 		markdownH2 = { fg = nord.nord11_gui, style = bold },
 		markdownH3 = { fg = nord.nord14_gui, style = bold },
-		Error = { fg = nord.nord11_gui, bg = nord.none, style = bold_underline }, -- any erroneous construct with bold
-		Comment = { fg = nord.nord3_gui_bright, style = italic }, -- italic comments
-		Conditional = { fg = nord.nord9_gui, style = italic }, -- italic if, then, else, endif, switch, etc.
-		Function = { fg = nord.nord8_gui, style = italic }, -- italic funtion names
-		Identifier = { fg = nord.nord9_gui, style = italic }, -- any variable name
-		Keyword = { fg = nord.nord9_gui, style = italic }, -- italic for, do, while, etc.
-		Repeat = { fg = nord.nord9_gui, style = italic }, -- italic any other keyword
-		String = { fg = nord.nord14_gui, style = italic }, -- any string
+		Error = { fg = nord.invalid_fg, bg = nord.none, style = bold_underline }, -- any erroneous construct with bold
+		Comment = { fg = nord.comment_fg, style = italic }, -- italic comments
+		Conditional = { fg = nord.keyword_fg, style = italic }, -- italic if, then, else, endif, switch, etc.
+		Function = { fg = nord.function_fg, style = italic }, -- italic funtion names
+		Identifier = { fg = nord.tag_fg, style = italic }, -- any variable name
+		Keyword = { fg = nord.keyword_fg, style = italic }, -- italic for, do, while, etc.
+		Repeat = { fg = nord.misc_fg, style = italic }, -- italic any other keyword
+		String = { fg = nord.string_fg, style = italic }, -- any string
 	}
 end
 
