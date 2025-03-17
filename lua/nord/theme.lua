@@ -270,33 +270,33 @@ theme.loadTreeSitter = function()
 		TSLiteral = { fg = nord.nord4_gui }, -- Literal text.
 		TSURI = { fg = nord.nord14_gui }, -- Any URI like a link or email.
 		TSAnnotation = { fg = nord.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		["@constructor"] = { fg = nord.nord9_gui },
-		["@constant"] = { fg = nord.nord13_gui },
-		["@float"] = { fg = nord.nord15_gui },
-		["@number"] = { fg = nord.nord15_gui },
-		["@attribute"] = { fg = nord.nord15_gui },
-		["@error"] = { fg = nord.nord11_gui },
-		["@exception"] = { fg = nord.nord15_gui },
-		["@funtion.macro"] = { fg = nord.nord7_gui },
-		["@include"] = { fg = nord.nord9_gui },
-		["@label"] = { fg = nord.nord15_gui },
-		["@operator"] = { fg = nord.nord9_gui },
-		["@parameter"] = { fg = nord.nord10_gui },
-		["@punctuation.delimiter"] = { fg = nord.nord8_gui },
-		["@punctuation.bracket"] = { fg = nord.nord8_gui },
-		["@punctuation.special"] = { fg = nord.nord8_gui },
-		["@symbol"] = { fg = nord.nord15_gui },
-		["@type"] = { fg = nord.nord9_gui },
-		["@type.builtin"] = { fg = nord.nord9_gui },
-		["@tag"] = { fg = nord.nord4_gui },
-		["@tag.delimiter"] = { fg = nord.nord15_gui },
-		["@text"] = { fg = nord.nord4_gui },
-		["@text.reference"] = { fg = nord.nord15_gui, style = bold },
-		["@text.emphasis"] = { fg = nord.nord10_gui, style = italic },
-		["@text.underline"] = { fg = nord.nord4_gui, bg = nord.none, style = "underline" },
-		["@text.literal"] = { fg = nord.nord4_gui },
-		["@text.uri"] = { fg = nord.nord14_gui, style = "underline" },
-		["@text.strike"] = { fg = nord.nord4_gui, style = "strikethrough" },
+		["@constructor"] = { fg = nord.keyword_fg },
+		["@constant"] = { fg = nord.constant_fg },
+		["@float"] = { fg = nord.constant_fg },
+		["@number"] = { fg = nord.constant_fg },
+		["@attribute"] = { fg = nord.constant_fg },
+		["@error"] = { fg = nord.invalid_fg },
+		["@exception"] = { fg = nord.invalid_fg },
+		["@funtion.macro"] = { fg = nord.keyword_fg },
+		["@include"] = { fg = nord.keyword_fg },
+		["@label"] = { fg = nord.keyword_fg },
+		["@operator"] = { fg = nord.keyword_fg },
+		["@parameter"] = { fg = nord.variable_fg },
+		["@punctuation.delimiter"] = { fg = nord.keyword_fg },
+		["@punctuation.bracket"] = { fg = nord.keyword_fg },
+		["@punctuation.special"] = { fg = nord.keyword_fg },
+		["@symbol"] = { fg = nord.keyword_fg },
+		["@type"] = { fg = nord.keyword_fg },
+		["@type.builtin"] = { fg = nord.keyword_fg },
+		["@tag"] = { fg = nord.tag_fg },
+		["@tag.delimiter"] = { fg = nord.tag_fg },
+		["@text"] = { fg = nord.text_fg },
+		["@text.reference"] = { fg = nord.text_fg, style = bold },
+		["@text.emphasis"] = { fg = nord.text_fg, style = italic },
+		["@text.underline"] = { fg = nord.text_fg, bg = nord.none, style = "underline" },
+		["@text.literal"] = { fg = nord.text_fg },
+		["@text.uri"] = { fg = nord.misc_fg, style = "underline" },
+		["@text.strike"] = { fg = nord.text_fg, style = "strikethrough" },
 		["@text.math"] = { fg = nord.nord7_gui },
 
 		-- @todo Missing highlights
@@ -319,12 +319,12 @@ theme.loadTreeSitter = function()
 	treesitter.TSConstMacro = { fg = nord.nord7_gui, style = bold }
 	treesitter.TSVariable = { fg = nord.nord4_gui, style = bold }
 	treesitter.TSTitle = { fg = nord.nord10_gui, bg = nord.none, style = bold }
-	treesitter["@variable"] = { fg = nord.nord4_gui, style = bold }
-	treesitter["@variable.builtin"] = { fg = nord.nord4_gui, style = bold }
-	treesitter["@variable.global"] = { fg = nord.nord4_gui, style = bold }
-	treesitter["@boolean"] = { fg = nord.nord9_gui, style = bold }
-	treesitter["@constant.builtin"] = { fg = nord.nord7_gui, style = bold }
-	treesitter["@constant.macro"] = { fg = nord.nord7_gui, style = bold }
+	treesitter["@variable"] = { fg = nord.variable_fg, style = bold }
+	treesitter["@variable.builtin"] = { fg = nord.variable_fg, style = bold }
+	treesitter["@variable.global"] = { fg = nord.variable_fg, style = bold }
+	treesitter["@boolean"] = { fg = nord.number_fg, style = bold }
+	treesitter["@constant.builtin"] = { fg = nord.constant_fg, style = bold }
+	treesitter["@constant.macro"] = { fg = nord.keyword_fg, style = bold }
 	treesitter["@text.title"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 	treesitter["@text.strong"] = { fg = nord.nord10_gui, bg = nord.none, style = bold }
 	-- Comments
@@ -351,23 +351,23 @@ theme.loadTreeSitter = function()
 	treesitter.TSStringEscape = { fg = nord.nord15_gui, style = italic } -- For escape characters within a string.
 	treesitter.TSCharacter = { fg = nord.nord14_gui, style = italic } -- For characters.
 
-	treesitter["@comment"] = { fg = nord.nord3_gui_bright, style = italic }
-	treesitter["@conditional"] = { fg = nord.nord9_gui, style = italic }
-	treesitter["@function"] = { fg = nord.nord8_gui, style = italic }
-	treesitter["@method"] = { fg = nord.nord8_gui, style = italic }
-	treesitter["@function.builtin"] = { fg = nord.nord8_gui, style = italic }
+	treesitter["@comment"] = { fg = nord.comment_fg, style = italic }
+	treesitter["@conditional"] = { fg = nord.keyword_fg, style = italic }
+	treesitter["@function"] = { fg = nord.function_fg, style = italic }
+	treesitter["@method"] = { fg = nord.function_fg, style = italic }
+	treesitter["@function.builtin"] = { fg = nord.function_fg, style = italic }
 	treesitter["@namespace"] = { fg = nord.nord4_gui, style = italic }
-	treesitter["@field"] = { fg = nord.nord4_gui, style = italic }
-	treesitter["@property"] = { fg = nord.nord10_gui, style = italic }
-	treesitter["@keyword"] = { fg = nord.nord9_gui, style = italic }
-	treesitter["@keyword.function"] = { fg = nord.nord8_gui, style = italic }
-	treesitter["@keyword.return"] = { fg = nord.nord8_gui, style = italic }
-	treesitter["@keyword.operator"] = { fg = nord.nord8_gui, style = italic }
-	treesitter["@repeat"] = { fg = nord.nord9_gui, style = italic }
-	treesitter["@string"] = { fg = nord.nord14_gui, style = italic }
-	treesitter["@string.regex"] = { fg = nord.nord7_gui, style = italic }
-	treesitter["@string.escape"] = { fg = nord.nord15_gui, style = italic }
-	treesitter["@character"] = { fg = nord.nord14_gui, style = italic }
+	treesitter["@field"] = { fg = nord.text_fg, style = italic }
+	treesitter["@property"] = { fg = nord.text_fg, style = italic }
+	treesitter["@keyword"] = { fg = nord.keyword_fg, style = italic }
+	treesitter["@keyword.function"] = { fg = nord.function_fg, style = italic }
+	treesitter["@keyword.return"] = { fg = nord.keyword_fg, style = italic }
+	treesitter["@keyword.operator"] = { fg = nord.keyword_fg, style = italic }
+	treesitter["@repeat"] = { fg = nord.keyword_fg, style = italic }
+	treesitter["@string"] = { fg = nord.string_fg, style = italic }
+	treesitter["@string.regex"] = { fg = nord.misc_fg, style = italic }
+	treesitter["@string.escape"] = { fg = nord.string_interpolated_fg, style = italic }
+	treesitter["@character"] = { fg = nord.string_fg, style = italic }
 
 	return treesitter
 end
