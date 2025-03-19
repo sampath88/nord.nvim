@@ -270,7 +270,7 @@ theme.loadTreeSitter = function()
 		TSLiteral = { fg = nord.nord4_gui }, -- Literal text.
 		TSURI = { fg = nord.nord14_gui }, -- Any URI like a link or email.
 		TSAnnotation = { fg = nord.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-		["@constructor"] = { fg = nord.keyword_fg },
+		["@constructor"] = { fg = nord.import_fg },
 		["@constant"] = { fg = nord.constant_fg },
 		["@float"] = { fg = nord.constant_fg },
 		["@number"] = { fg = nord.constant_fg },
@@ -278,7 +278,7 @@ theme.loadTreeSitter = function()
 		["@error"] = { fg = nord.invalid_fg },
 		["@exception"] = { fg = nord.invalid_fg },
 		["@funtion.macro"] = { fg = nord.keyword_fg },
-		["@include"] = { fg = nord.keyword_fg },
+		["@include"] = { fg = nord.import_fg },
 		["@label"] = { fg = nord.keyword_fg },
 		["@operator"] = { fg = nord.keyword_fg },
 		["@parameter"] = { fg = nord.variable_fg },
